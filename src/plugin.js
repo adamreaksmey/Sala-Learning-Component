@@ -4,7 +4,7 @@ const Plugin = {
   install(Vue) {
     // Loop through all components and register them
     for (const key in components) {
-      if (components.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(components, key)) {
         const component = components[key];
         Vue.component(component.name, component);
       }
