@@ -1,12 +1,12 @@
 <template>
-  <div class="sala-component">
+  <div class="my-component">
     <h1>{{ title }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "SalaLearningComponent",
+  name: "MyComponent",
   props: {
     title: {
       type: String,
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style scoped>
-.sala-component {
+.my-component {
   color: blue;
 }
 </style>
