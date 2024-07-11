@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/adamreaksmey/Sala-Learning-Component/issues"
   },
-  "homepage": "https://github.com/adamreaksmey/Sala-Learning-Component#readme"
+  "homepage": "https://github.com/adamreaksmey/Sala-Learning-Component#readme",
+  "dependencies": {
+    "vue": "^3.4.31"
+  }
 }
