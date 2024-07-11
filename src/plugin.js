@@ -2,8 +2,12 @@ import * as components from './components';
 
 const Plugin = {
   install(Vue) {
-    for (const component in components) {
-      Vue.component(components[component].name, components[component]);
+    // Loop through all components and register them
+    for (const key in components) {
+      if (components.hasOwnProperty(key)) {
+        const component = components[key];
+        Vue.component(component.name, component);
+      }
     }
   }
 };
