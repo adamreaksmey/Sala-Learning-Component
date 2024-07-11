@@ -1,5 +1,5 @@
-declare module "sala-learning-component" {
-  import { Component } from "vue";
-  const MyComponent: Component;
-  export default MyComponent;
-}
+import { PluginFunction } from 'vue';
+import { SalaLearning } from './components/salalearning';
+
+export const install: PluginFunction<any>;
+export { SalaLearning };

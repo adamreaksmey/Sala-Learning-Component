@@ -10,7 +10,7 @@
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vue-cli-service build --target lib --name my-component src/MyComponent.vue"
+    "build": "vue-cli-service build --target lib --name SalaLearningComponent src/index.js"
   },
   "main": "dist/my-component.umd.js",
   "types": "types/index.d.ts",
