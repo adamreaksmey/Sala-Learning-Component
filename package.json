@@ -1,18 +1,19 @@
 {
   "name": "sala-learning-component",
-  "version": "1.0.0",
-  "private": true,
+  "version": "1.0.1",
+  "private": false,
   "description": "Sala learning component",
   "author": {
     "name": "Adam - The Developer"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vue-cli-service build --target lib --name my-component src/MyComponent.vue"
+
   },
-  "main": "index.js",
+  "main": "dist/my-component.umd.js",
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.4.31"
