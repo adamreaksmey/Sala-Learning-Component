@@ -6,6 +6,7 @@ const Plugin = {
     for (const key in components) {
       if (Object.prototype.hasOwnProperty.call(components, key)) {
         const component = components[key];
+        console.log('Registering component:', component.name, component); // Debugging line
         Vue.component(component.name, component);
       }
     }
