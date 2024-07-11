@@ -1,3 +1,5 @@
-import MyComponent from "@/MyComponent.vue";
+import Plugin from './plugin';
+export default Plugin;
 
-export default MyComponent;
+// Allow individual component use
+export * from './components';
