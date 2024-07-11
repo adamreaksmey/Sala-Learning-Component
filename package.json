@@ -1,6 +1,6 @@
 {
   "name": "sala-learning-component",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "description": "Sala learning component",
   "author": {
@@ -16,7 +16,7 @@
   "types": "types/index.d.ts",
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.4.31"
+    "vue": "^2.7.16"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
