@@ -2,16 +2,19 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
     <SalaLearning :title="'helloooooo'"/>
+    <BButton>Hello world</BButton>
   </div>
 </template>
 
 <script>
 import SalaLearning from "./components/SalaLearning.vue";
+import { BButton } from 'bootstrap-vue';
 
 export default {
   name: "App",
   components: {
     SalaLearning,
+    BButton
   },
 };
 </script>
