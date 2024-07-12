@@ -20,7 +20,7 @@
       </div>
       <div v-else>
         <b-card-header
-          class="d-flex justify-content-between align-items-center"
+          class="d-flex justify-content-between align-items-center cursor-pointer"
           :class="{ 'lesson--active': activeLesson && activeLesson.id === lesson.id }"
           @click="handleClickLesson(lesson)"
         >
