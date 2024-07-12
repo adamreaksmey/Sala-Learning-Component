@@ -1,5 +1,4 @@
-import * as components from "./components";
-// Remove dotenv.config(); and import dotenv from "dotenv";
+import * as components from './components';
 
 const debugModeOn = process.env.DEBUG_MODE === "false";
 const Plugin = {
@@ -7,17 +6,16 @@ const Plugin = {
    * The following install function dynamically registers
    * each component to allow for local imports.
    * @param {*} Vue
-   *
+   * 
    * For bootstrap css import options.
    * @param {{}} [options={}]
    */
   install(Vue, options = {}) {
-    // UNDER MAINTAINENCE
-    // if (!options.skipCss) {
-    //   // Import Bootstrap and BootstrapVue CSS files only if not skipped
-    //   require("bootstrap/dist/css/bootstrap.css");
-    //   require("bootstrap-vue/dist/bootstrap-vue.css");
-    // }
+    if (process.env.NODE_ENV !== 'test' && !options.skipCss) {
+      // Import Bootstrap and BootstrapVue CSS files only if not skipped
+      require("bootstrap/dist/css/bootstrap.css");
+      require("bootstrap-vue/dist/bootstrap-vue.css");
+    }
     if (!debugModeOn) {
       console.log("Components:", components);
     }

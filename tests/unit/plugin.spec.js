@@ -4,6 +4,10 @@ import Plugin from '@/plugin';
 import { SalaLearning } from '@/components';
 
 describe('Plugin', () => {
+  beforeAll(() => {
+    process.env.NODE_ENV = 'test';
+  });
+
   it('installs the SalaLearning component', () => {
     const localVue = createLocalVue();
     localVue.use(Plugin);
