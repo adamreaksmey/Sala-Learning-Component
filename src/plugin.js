@@ -4,6 +4,11 @@ import dotenv from 'dotenv'
 
 const debugModeOn = process.env.DEBUG_MODE === 'false'
 const Plugin = {
+  /**
+   * The following install function dynamically registers
+   * each component to allow for local imports.
+   * @param {*} Vue 
+   */
   install(Vue) {
     debugModeOn ?? console.log('Components:', components);
     for (const key in components) {
