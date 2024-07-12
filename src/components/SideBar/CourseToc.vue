@@ -21,6 +21,8 @@
       <div v-else>
         <b-card-header
           class="d-flex justify-content-between align-items-center"
+          :class="{ 'lesson--active': activeLesson && activeLesson.id === lesson.id }"
+          @click="handleClickLesson(lesson)"
         >
           {{ lesson.name }}
         </b-card-header>
@@ -39,8 +41,7 @@ export default {
     BCardHeader,
     BCardBody,
     BCollapse,
-    BIcon,
-    CourseToc: () => import("./CourseToc.vue"),
+    BIcon
   },
   props: {
     lessons: {
@@ -51,6 +52,7 @@ export default {
   data() {
     return {
       openLessons: [],
+      activeLesson: null
     };
   },
   methods: {
@@ -65,6 +67,9 @@ export default {
     isLessonOpen(lessonId) {
       return this.openLessons.includes(lessonId);
     },
+    handleClickLesson(lesson) {
+      this.activeLesson = lesson
+    }
   },
 };
 </script>
@@ -72,5 +77,10 @@ export default {
 <style scoped>
 .cursor-pointer {
   cursor: pointer;
+}
+
+.lesson--active {
+  color: white;
+  background-color: #A52A2A;
 }
 </style>
