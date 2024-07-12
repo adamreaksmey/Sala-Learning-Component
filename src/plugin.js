@@ -1,12 +1,15 @@
 import * as components from './components';
+dotenv.config()
+import dotenv from 'dotenv'
 
+const debugModeOn = process.env.DEBUG_MODE === 'false'
 const Plugin = {
   install(Vue) {
-    console.log('Components:', components); // Debugging line
+    debugModeOn ?? console.log('Components:', components);
     for (const key in components) {
       if (Object.prototype.hasOwnProperty.call(components, key)) {
         const component = components[key];
-        console.log('Registering component:', component.name, component); // Debugging line
+        debugModeOn ?? console.log('Registering component:', component.name, component);
         Vue.component(component.name, component);
       }
     }
