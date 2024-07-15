@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100">
+  <div :class="defaultCardStyle">
     <b-card v-for="lesson in lessons" :key="lesson.id" class="mb-2">
       <div v-if="lesson.children && lesson.children.length">
         <b-card-header
@@ -21,7 +21,9 @@
       <div v-else class="w-100">
         <b-card-header
           class="d-flex justify-content-between align-items-center cursor-pointer w-100"
-          :class="{ 'lesson--active': activeLesson && activeLesson.id === lesson.id }"
+          :class="{
+            'lesson--active': activeLesson && activeLesson.id === lesson.id,
+          }"
           @click="handleClickLesson(lesson)"
         >
           {{ lesson.name }}
@@ -41,18 +43,33 @@ export default {
     BCardHeader,
     BCardBody,
     BCollapse,
-    BIcon
+    BIcon,
   },
   props: {
     lessons: {
       type: Array,
       required: true,
     },
+    cardStyle: {
+      type: String,
+      default: 'w-100 course-toc-card',
+    },
+  },
+  watch: {
+    cardStyle: {
+      immediate: true,
+      handler(newValue) {
+        if (newValue) {
+          this.defaultCardStyle = newValue;
+        }
+      },
+    },
   },
   data() {
     return {
       openLessons: [],
-      activeLesson: null
+      activeLesson: null,
+      defaultCardStyle: null,
     };
   },
   methods: {
@@ -68,8 +85,8 @@ export default {
       return this.openLessons.includes(lessonId);
     },
     handleClickLesson(lesson) {
-      this.activeLesson = lesson
-    }
+      this.activeLesson = lesson;
+    },
   },
 };
 </script>
@@ -81,6 +98,6 @@ export default {
 
 .lesson--active {
   color: white;
-  background-color: #A52A2A;
+  background-color: #a52a2a;
 }
 </style>
