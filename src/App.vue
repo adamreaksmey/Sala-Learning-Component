@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <CourseToc :lessons="learningPath" />
+  <div class="d-flex" style="width: 1200px">
+    <div class="w-50"><CourseToc :lessons="learningPath" /></div>
+    <div class="w-50">content shit</div>
   </div>
 </template>
 

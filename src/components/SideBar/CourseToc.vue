@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-100">
     <b-card v-for="lesson in lessons" :key="lesson.id" class="mb-2">
       <div v-if="lesson.children && lesson.children.length">
         <b-card-header
@@ -18,9 +18,9 @@
           </b-card-body>
         </b-collapse>
       </div>
-      <div v-else>
+      <div v-else class="w-100">
         <b-card-header
-          class="d-flex justify-content-between align-items-center cursor-pointer"
+          class="d-flex justify-content-between align-items-center cursor-pointer w-100"
           :class="{ 'lesson--active': activeLesson && activeLesson.id === lesson.id }"
           @click="handleClickLesson(lesson)"
         >
